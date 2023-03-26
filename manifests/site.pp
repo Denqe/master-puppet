@@ -1,9 +1,6 @@
 node master.puppet{
-  package { 'git':
+  package { 'htop':
     ensure => installed,
-  }
-  service { 'firewalld':
-    ensure => stopped,
   }
   
 
