@@ -5,7 +5,10 @@ node master.puppet{
   package { 'r10k':
     ensure => installed,
   }
-
+  service { 'firewalld':
+    ensure => stoped,
+  }
+  
 
 
 
