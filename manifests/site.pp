@@ -1,6 +1,12 @@
-node slave2.puppet{
-  file { '/root/README':
-    ensure => file,
-    content => 'Hello, denqq',
+node master.puppet{
+  package { 'git':
+    ensure => installed,
   }
+  package { 'r10k':
+    ensure => installed,
+  }
+
+
+
+
 }
