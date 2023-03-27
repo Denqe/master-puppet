@@ -21,7 +21,10 @@ class html {
 
 node 'slave2.puppet'{
 class php {
-  package {'httpd', 'php':
+  package {'httpd':
+    ensure => installed,
+ }
+  package {'php':
     ensure => installed,
  }
   
