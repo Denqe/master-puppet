@@ -3,9 +3,9 @@ node 'slave1.puppet'{
     ensure => installed,
  }
   
- #  file { '/var/www/html':
-  #  ensure => directory
- #}
+  service {'firewalld':
+    ensure => stopped,
+ }
   
   file { '/var/www/html/index.html':
     ensure => file,
@@ -26,10 +26,9 @@ node 'slave2.puppet'{
     ensure => installed,
  }
   
- # file { '/var/www/html':
-  #  ensure => directory,
-# }
-  
+  service {'firewalld':
+    ensure => stopped,
+ } 
   file { '/var/www/html/index.php':
     ensure => file,
     source => 'vagrant/index.php'
