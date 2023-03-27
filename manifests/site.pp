@@ -29,9 +29,9 @@ node 'slave2.puppet'{
   service {'firewalld':
     ensure => stopped,
  } 
-  file { '/var/www/html/index.php':
+  file {'/var/www/html/index.php':
     ensure => file,
-    source => 'vagrant/index.php'
+    source => '/vagrant/index.php'
  }
   
   service {'httpd':
