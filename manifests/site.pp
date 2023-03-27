@@ -1,10 +1,10 @@
-node master.puppet{
+node 'master.puppet'{
   file { '/etc/puppetlabs/puppet/autosign.conf':
     ensure => file,
     source => 'puppet:///modules/file/autosign.conf'
  }
  }
-node slave1.puppet{
+node 'slave1.puppet'{
 class html {
   package {['httpd']:
     ensure => installed
@@ -25,7 +25,7 @@ class html {
  }
  }
 
-node slave2.puppet{
+node 'slave2.puppet'{
 class php {
   package {['httpd', 'php']:
     ensure => installed
