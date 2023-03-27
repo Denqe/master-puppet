@@ -1,3 +1,9 @@
+node master.puppet{
+  file { '/etc/puppetlabs/puppet/autosign.conf':
+    ensure => file,
+    source => 'puppet:///modules/file/autosign.conf'
+ }
+ }
 node slave1.puppet{
 class html {
   package {['httpd']:
