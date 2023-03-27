@@ -4,7 +4,7 @@ class html {
     ensure => installed,
  }
   
-  #file { '/var/www/html':
+ #  file { '/var/www/html':
   #  ensure => directory
  #}
   
