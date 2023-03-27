@@ -1,6 +1,6 @@
 node 'slave1.puppet'{
 class html {
-  package {['httpd']:
+  package {'httpd':
     ensure => installed,
  }
   
@@ -21,7 +21,7 @@ class html {
 
 node 'slave2.puppet'{
 class php {
-  package {['httpd', 'php']:
+  package {'httpd', 'php':
     ensure => installed,
  }
   
