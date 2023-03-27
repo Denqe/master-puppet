@@ -1,7 +1,7 @@
 node 'slave1.puppet'{
 class html {
   package {['httpd']:
-    ensure => installed
+    ensure => installed,
  }
   
   file { '/var/www/html':
@@ -14,7 +14,7 @@ class html {
  }
    
   service {'httpd':
-    ensure => running
+    ensure => running,
  }
  }
  }
@@ -22,11 +22,11 @@ class html {
 node 'slave2.puppet'{
 class php {
   package {['httpd', 'php']:
-    ensure => installed
+    ensure => installed,
  }
   
   file { '/var/www/html':
-    ensure => directory
+    ensure => directory,
  }
   
   file { '/var/www/html/index.php':
@@ -35,7 +35,7 @@ class php {
  }
   
   service {'httpd':
-    ensure => running
+    ensure => running,
 }
 }  
 }
