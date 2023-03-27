@@ -1,5 +1,4 @@
 node 'slave1.puppet'{
-class html {
   package {'httpd':
     ensure => installed,
  }
@@ -17,13 +16,12 @@ class html {
     ensure => running,
  }
  }
- }
 
 node 'slave2.puppet'{
-class php {
   package {'httpd':
     ensure => installed,
  }
+  
   package {'php':
     ensure => installed,
  }
@@ -39,6 +37,5 @@ class php {
   
   service {'httpd':
     ensure => running,
-}
 }  
 }
