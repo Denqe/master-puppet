@@ -40,7 +40,8 @@ node 'slave2.puppet'{
 }
 
 node 'master.puppet'{
-  class{"nginx": }
+  class {"nginx": 
+}
   
   nginx::resource::server {'192.168.50.10':
   www_root => '/opt/html/',
