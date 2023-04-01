@@ -1,0 +1,10 @@
+[unit]
+Description=minecraft
+
+[Service]
+WorkingDirectory=/opt/minecraft
+ExecStart=/opt/minecraft
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
