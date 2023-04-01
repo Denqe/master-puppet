@@ -3,7 +3,7 @@ Description=minecraft
 
 [Service]
 WorkingDirectory=/opt/minecraft
-ExecStart=/opt/minecraft
+ExecStart=java -Xmx1024M -Xms512M -jar /opt/minecraft_server.jar nogui
 Restart=always
 
 [Install]
