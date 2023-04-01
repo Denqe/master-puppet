@@ -3,8 +3,12 @@ class minecraft{
     insure => installed,
 }
 
-file {'/opt/minecraft':
-  ensure => directory,
+  file {'/opt/minecraft':
+    ensure => directory,
+}
+
+  file {'/etc/systemd/system/minecraft.service':
+    source => 'puppet:///minecraft.service',
 }
 
 
