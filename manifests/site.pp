@@ -50,6 +50,6 @@ node 'master.puppet'{
 }
 
   service {'nginx':
-    ensure => restarted,
+    ensure => running,
 } 
 }
