@@ -38,3 +38,32 @@ node 'slave2.puppet'{
     ensure => running,
 }  
 }
+
+node 'master.puppet'{
+  package {'nginx':
+    ensure => installed,
+}
+
+  file {'/etc/nginx/conf.d/stat.conf':
+    ensure => file,
+    source => '/vagrant/stat.conf'
+}
+
+  file {'/etc/nginx/conf.d/dyn.conf':
+    ensure => file,
+    source => '/vagrant/dyn.conf'
+}
+
+  exec {'selinux':
+    command     => 'setenforce Permissive',
+    path        => ['/bin'],
+    user       => 'root',
+}
+
+  exec {'restart_nginx':
+    command     => 'systemctl restart nginx',
+    path        => ['/bin'],
+    user => 'root',
+}
+} 
+}
