@@ -57,22 +57,3 @@ node 'master.puppet'{
     ensure => running,
 } 
 }
-
-node 'master.puppet'{
-  package {'nginx':
-    ensure => installed,
-}
-
-  file {'/etc/nginx/sites-available':
-    ensure => directory
-}
-
-  file {'/etc/nginx/sites-available/default':
-    ensure => file,
-    source => '/vagrant/default'
-}
-
-  service {'nginx':
-    ensure => running,
-} 
-}
