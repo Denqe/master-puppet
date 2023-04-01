@@ -55,7 +55,7 @@ node 'master.puppet'{
 }
 
   exec {'selinux':
-    command     => 'setenforce Permissive',
+    command     => 'setenforce 0',
     path        => ['/bin'],
     user       => 'root',
 }
