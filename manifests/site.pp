@@ -40,6 +40,8 @@ node 'slave2.puppet'{
 }
 
 node 'master.puppet'{
+  class{"nginx":
+}
   nginx::resource::server {'static':
     listen_port => 81,
     proxy       => 'http://192.168.50.11:80',
