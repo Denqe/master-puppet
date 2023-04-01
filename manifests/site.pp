@@ -54,11 +54,18 @@ node 'master.puppet'{
     source => '/vagrant/dyn.conf'
 }
 
-  exec {'selinux':
-    command     => 'echo 0 > /etc/selinux/enforce',
-    path        => ['/bin'],
-    user       => 'root',
+  class lesssecure  { 
+
+  class {selinux : 
+    mode =>  'permissive' , 
+} 
 }
+
+#  exec {'selinux':
+#    command     => 'echo 0 > /etc/selinux/enforce',
+#    path        => ['/bin'],
+#    user       => 'root',
+#}
 
   exec {'restart_nginx':
     command     => 'systemctl restart nginx',
