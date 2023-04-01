@@ -44,12 +44,12 @@ node 'master.puppet'{
     ensure => installed,
 }
 
-nginx::resource::server { 'static':
+nginx { 'static':
   listen_port => 80,
   proxy => 'http://192.168.33.11:80',
 }
 
-nginx::resource::server { 'dynamic':
+nginx { 'dynamic':
   listen_port => 81,
   proxy => 'http://192.168.33.12:80',
 }
