@@ -40,18 +40,17 @@ node 'slave2.puppet'{
 }
 
 node 'master.puppet'{
-  package {'nginx':
-    ensure => installed,
+
+  include nginx
+  
+  nginx::resource::server { 'stat':
+    listen_port => 81,
+    proxy       => 'http://192.168.50.11:80',
 }
 
-  file {'/etc/nginx/conf.d/stat.conf':
-    ensure => file,
-    source => '/vagrant/stat.conf'
-}
-
-  file {'/etc/nginx/conf.d/dyn.conf':
-    ensure => file,
-    source => '/vagrant/dyn.conf'
+  nginx::resource::server { 'dyn':
+    listen_port => 8080,
+    proxy       => 'http://192.168.50.12:80',
 }
 
   exec {'selinux':
