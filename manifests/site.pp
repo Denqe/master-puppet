@@ -47,6 +47,7 @@ node 'master.puppet'{
   file {'/etc/nginx/conf.d/stat.conf':
     ensure => file,
     source => '/vagrant/stat.conf'
+}
     
   file {'/etc/nginx/conf.d/dyn.conf':
     ensure => file,
