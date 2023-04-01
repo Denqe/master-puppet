@@ -40,7 +40,6 @@ node 'slave2.puppet'{
 }
 
 node 'master.puppet'{
-  include nginx
   class { 'nginx':
   nginx::resource::server { 'stat':
     listen_port => 81,
