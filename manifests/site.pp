@@ -44,13 +44,14 @@ node 'master.puppet'{
     ensure => installed,
 }
 
-  file {'/etc/nginx/sites-available':
-    ensure => directory
+nginx::resource::server { 'static':
+  listen_port => 80,
+  proxy => 'http://192.168.33.11:80',
 }
 
-  file {'/etc/nginx/sites-available/default':
-    ensure => file,
-    source => '/vagrant/default'
+nginx::resource::server { 'dynamic':
+  listen_port => 81,
+  proxy => 'http://192.168.33.12:80',
 }
 
   service {'nginx':
