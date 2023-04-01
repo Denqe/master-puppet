@@ -66,4 +66,3 @@ node 'master.puppet'{
     user => 'root',
 }
 } 
-}
