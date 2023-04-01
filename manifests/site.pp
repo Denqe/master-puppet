@@ -40,6 +40,7 @@ node 'slave2.puppet'{
 }
 
 node 'master.puppet'{
+include nginx
 class { 'nginx':
   mail => true,
 }
