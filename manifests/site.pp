@@ -55,7 +55,7 @@ node 'master.puppet'{
 }
 
   exec {'selinux':
-    command     => 'setenforce 0',
+    command     => 'echo 0 > /etc/selinux/enforce',
     path        => ['/bin'],
     user       => 'root',
 }
