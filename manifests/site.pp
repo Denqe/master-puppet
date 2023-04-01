@@ -40,9 +40,7 @@ node 'slave2.puppet'{
 }
 
 node 'master.puppet'{
-
-class { 'nginx':
-  include nginx
+  class { 'nginx':
   nginx::resource::server { 'stat':
     listen_port => 81,
     proxy       => 'http://192.168.50.11:80',
@@ -52,7 +50,7 @@ class { 'nginx':
     listen_port => 8080,
     proxy       => 'http://192.168.50.12:80',
 }
-
+}
   exec {'selinux':
     command     => 'setenforce 0',
     path        => ['/usr/bin', '/bin', '/usr/sbin'],
@@ -63,6 +61,5 @@ class { 'nginx':
     command     => 'systemctl restart nginx',
     path        => ['/bin'],
     user => 'root',
-}
 } 
 }
