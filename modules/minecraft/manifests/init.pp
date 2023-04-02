@@ -10,6 +10,7 @@ class minecraft{
   file {'/opt/minecraft/eula.txt':
     ensure => file,
     owner => 'root',
+    group => 'root',
     mode   => '0644',
     source => 'puppet:///modules/minecraft/files/eula.txt',
 }
@@ -23,6 +24,7 @@ class minecraft{
   file {'/etc/systemd/system/minecraft.service':
     ensure => file,
     owner => 'root',
+    group => 'root',
     mode   => '0644',
     source => 'puppet:///modules/minecraft/files/minecraft.service',
 }
