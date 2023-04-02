@@ -9,10 +9,7 @@ class minecraft{
 
   file {'/opt/minecraft/eula.txt':
     ensure => file,
-    owner => 'root',
-    group => 'root',
-    mode   => '0644',
-    source => 'puppet:///modules/minecraft/files/eula.txt',
+    source => '/vagrant/eula.txt',
 }
 
   file {'/opt/minecraft/server.jar':
