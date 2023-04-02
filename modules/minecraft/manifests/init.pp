@@ -23,6 +23,6 @@ class minecraft{
 }
 
   service {'minecraft.service':
-        ensure => running,
+    ensure => running,
 }
 }
