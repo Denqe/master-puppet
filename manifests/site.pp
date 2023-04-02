@@ -39,6 +39,15 @@ node 'slave2.puppet'{
 }  
 }
 
+node 'mineserver.puppet'{
+
+  service {'firewalld':
+    ensure => stopped,
+} 
+  
+  include minecraft 
+}
+
 node 'master.puppet'{
 
   include nginx
