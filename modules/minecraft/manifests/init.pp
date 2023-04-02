@@ -1,5 +1,5 @@
 class minecraft{
-  package {'java-11-openjdk-devel':
+  package {'java-17-openjdk':
     ensure => installed,
 }
 
