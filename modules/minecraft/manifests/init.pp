@@ -7,7 +7,7 @@ class minecraft{
     ensure => directory,
 }
 
-  file {'/opt/minecraft':
+  file {'/opt/minecraft/server.jar':
     ensure => file,
     replace => false,
     source => 'https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar',
