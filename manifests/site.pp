@@ -44,6 +44,11 @@ node 'mineserver.puppet'{
   service {'firewalld':
     ensure => stopped,
 } 
+
+  class { selinux:
+    mode => 'permissive',
+    type => 'targeted',
+}
   
   include minecraft 
 }
