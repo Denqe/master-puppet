@@ -7,8 +7,9 @@ class minecraft{
     ensure => directory,
 }
 
-  file {'/etc/systemd/system/minecraft.service':
+  file {'/opt/minecraft':
     ensure => file,
+    replace => false,
     source => 'https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar',
 }
 
