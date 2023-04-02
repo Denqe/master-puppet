@@ -1,9 +1,9 @@
 [unit]
-Description=minecraft
+Description=minecraft.service
 
 [Service]
 WorkingDirectory=/opt/minecraft
-ExecStart=/bin/java -Xmx1024M -Xms1024M -jar /opt/minecraft_server.jar nogui
+ExecStart=/bin/java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui
 Restart=always
 
 [Install]
