@@ -8,7 +8,8 @@ class minecraft{
 }
 
   file {'/opt/minecraft/eula.txt':
-    content => 'eula=true',
+    ensure => file,
+    source => '/vagrant/eula.txt',
 }
 
   file {'/opt/minecraft/server.jar':
