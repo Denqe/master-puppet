@@ -23,7 +23,7 @@ class minecraft{
     source => 'puppet:///modules/minecraft/files/minecraft.service',
 }
 
-  service {'minecraft.service':
-    ensure => running,
+ ~> service {'minecraft.service':
+      ensure => running,
 }
 }
