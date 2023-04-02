@@ -1,6 +1,6 @@
 class minecraft{
   package {'java-11-openjdk-devel':
-    insure => installed,
+    ensure => installed,
 }
 
   file {'/opt/minecraft':
