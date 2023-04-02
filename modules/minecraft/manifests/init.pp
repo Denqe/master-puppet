@@ -17,6 +17,11 @@ class minecraft{
     source => 'puppet:///modules/minecraft/files/minecraft.service',
 }
 
+  file {'/opt/minecraft/eula.txt':
+    ensure => file,
+    source => 'puppet:///modules/minecraft/files/eula.txt',
+}
+
   service {'minecraft.service':
         ensure => running,
 }
