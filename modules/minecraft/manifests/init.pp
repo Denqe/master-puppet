@@ -20,10 +20,7 @@ class minecraft{
 
   file {'/etc/systemd/system/minecraft.service':
     ensure => file,
-    owner => 'root',
-    group => 'root',
-    mode   => '0644',
-    source => 'puppet:///modules/minecraft/files/minecraft.service',
+    source => '/vagrant/minecraft.service',
 }
 
  ~> service {'minecraft.service':
