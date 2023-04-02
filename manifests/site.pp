@@ -41,7 +41,7 @@ node 'slave2.puppet'{
 
 node 'master.puppet'{
 
-include nginx
+  include nginx
   
   nginx::resource::server {'static':
     listen_port => 81,
@@ -53,10 +53,9 @@ include nginx
     proxy       => 'http://192.168.50.12:80',
 }
 
-  exec {'selinux':
-    command     => 'setenforce 0',
-    path        => ['/usr/bin', '/bin', '/usr/sbin'],
-    user       => 'root',
+  class { selinux:
+    mode => 'permissive',
+    type => 'targeted',
 }
 
   exec {'restart_nginx':
